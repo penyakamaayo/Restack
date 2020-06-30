@@ -26,4 +26,6 @@ test:
 
 production:
   <<: *default
-  database: restack_production
+  database: <%= ENV['DATABASE_URL'] %>
+  # database: restack_production
+
