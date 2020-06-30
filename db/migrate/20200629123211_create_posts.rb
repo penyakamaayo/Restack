@@ -4,9 +4,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     	t.references :user
       t.string :title
       t.text :body
-      t.integer :upvotes
-      t.integer :downvotes
-      t.integer :total_comments
+      t.integer :upvotes, default: 0
+      t.integer :downvotes, default: 0
+      t.integer :total_comments, default: 0
       t.timestamps
     end
   end
