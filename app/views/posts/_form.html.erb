@@ -27,7 +27,8 @@
 			<%=form.text_area :body, class: "form-control" %>
 			</div>
 
-			<%= form.submit "Submit", class: "btn btn-primary" %>
+			<%= form.submit "Submit", class: "btn btn-primary float-right" %>
+			<%= link_to "Back to Posts", posts_path(), class: "mr-2 btn btn-primary float-right" %>
 			<% end %>
 
 		</div>
