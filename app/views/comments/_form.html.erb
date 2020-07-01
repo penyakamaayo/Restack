@@ -5,7 +5,7 @@
 
       <ul>
         <% comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          <li><%= message %></li> 
         <% end %>
       </ul>
     </div>
@@ -16,6 +16,7 @@
     <%= form.text_area :body %>
   </div>
 
+ <% if false %>
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
@@ -25,6 +26,10 @@
     <%= form.label :post_id %>
     <%= form.text_field :post_id %>
   </div>
+
+<% end %>
+  
+    <%= form.hidden_field :post_id, value: post_id %>
 
   <div class="actions">
     <%= form.submit %>
