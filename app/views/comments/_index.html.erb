@@ -18,9 +18,9 @@
         <td><%= comment.body %></td>
         <td><%= User.find(comment.user_id).email %></td>
         <td><%= comment.post_id %></td>
-        <td><%= link_to 'Reply to Comment |', comment %></td>
-        <td><%= link_to 'Edit |', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy |', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Reply to Comment', comment %></td>
+        <!-- <td><%= link_to 'Edit |', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy |', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

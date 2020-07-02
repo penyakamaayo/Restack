@@ -1,5 +1,5 @@
-  class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  class RepliesController < ApplicationController
+  before_action :set_reply, only: [:show, :edit, :update, :destroy]
 
   def index
     @replies = Reply.all
@@ -16,11 +16,11 @@
   end
 
   def create
-    @reply = Reply.new(reply)
+    @reply = Reply.new(reply_params)
     @reply.user_id = current_user.id
 
     if @reply.save
-      redirect_to post_path(@reply.post_id)
+      redirect_to comment_path(@reply.comment_id)
     else 
       render 'new'
     end
