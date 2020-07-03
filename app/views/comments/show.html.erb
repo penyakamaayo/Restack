@@ -16,6 +16,10 @@
 	  <%= @comment.post_id %>
 	</p>
 
+	<p>
+  		Commented On <%= @comment.created_at.strftime("%B %d %Y, %l:%M%P") %>
+	</p>
+
 		<%= render 'replies/index', replies: @comment.replies %>
 		<%= render 'replies/form', reply: Reply.new , comment_id: @comment.id %>
 
