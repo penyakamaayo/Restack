@@ -1,6 +1,5 @@
 class UpvotesController < ApplicationController
-protect_from_forgery
-
+ protect_from_forgery
 
   def create
     @upvote = Upvote.new(secure_params)
