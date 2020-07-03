@@ -1,21 +1,18 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: replies
 #
 #  id         :bigint           not null, primary key
 #  body       :text
 #  user_id    :bigint           not null
-#  post_id    :bigint           not null
+#  comment_id :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+require 'test_helper'
 
-one:
-  body: MyText
-  user: one
-  post: one
-
-two:
-  body: MyText
-  user: two
-  post: two
+class ReplyTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

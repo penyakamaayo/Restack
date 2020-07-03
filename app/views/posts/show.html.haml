@@ -1,0 +1,17 @@
+.container
+  %h2
+    = @post.title
+  = simple_format @post.body
+  Created on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
+  %br/
+  This post has #{@post.comments.count} comments.
+  %br/
+  This post has #{@post.upvotes.count} upvotes.
+  - if true
+    - vote = Upvote.new post_id: @post.id
+    = form_for vote, url: post_upvotes_path(post_id: @post.id), remote: true do |f|
+      = f.hidden_field :user_id, value: current_user.id
+      = f.submit 'Upvote', class: 'upvote-submit'
+  = render 'comments/index', comments: @post.comments
+  = render 'comments/form', comment: Comment.new , post_id: @post.id
+  = link_to 'Back', posts_path

@@ -13,9 +13,13 @@
 #  updated_at     :datetime         not null
 #
 class Post < ApplicationRecord
+    belongs_to :user
+    has_many :comments
+    has_many :upvotes, dependent: :destroy
 
-	belongs_to :user
-	has_many :comments
-	validates_presence_of :title, :body, :user_id
+    def score
+        upvotes.count
+    end
 
+    validates_presence_of :title, :body, :user_id
 end

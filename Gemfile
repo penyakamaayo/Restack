@@ -11,6 +11,8 @@ gem 'pg'
 
 gem 'jquery-rails'
 
+gem "haml-rails", "~> 2.0"
+
 gem 'bootstrap', '~> 4.5.0'
 # Use Puma as the app server
 gem 'puma' #, '~> 3.11'
