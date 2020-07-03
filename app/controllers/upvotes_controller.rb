@@ -1,11 +1,11 @@
 class UpvotesController < ApplicationController
- protect_from_forgery
+  protect_from_forgery
 
   def create
     @upvote = Upvote.new(secure_params)
     @upvote.post = Post.find(params[:post_id])
-    if @upvote.save
-      respond_to do |format|
+      if @upvote.save
+        respond_to do |format|
         format.html { redirect_to @upvote.post }
         #Use later for ajax (?)
         format.js 
