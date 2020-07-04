@@ -16,7 +16,8 @@
 
 /*@import "bootstrap/scss/bootstrap";*/
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Quicksand:wght@300&family=Raleway:wght@600&family=Roboto+Slab:wght@600&display=swap');
 
 tr {
 	
@@ -24,5 +25,19 @@ tr {
 
 }
 
+home_link { font-family: 'Roboto Slab', serif; }
+h4 { font-family: 'Lora', serif;}
+h5 {font-family: 'Quicksand', sans-serif;}
+posted_by {font-family: 'Quicksand', sans-serif;}
+post_count {font-family: 'Roboto Slab', serif;}
+
+a {color: black; text-decoration: none;}
+a:hover {text-decoration:none; color: #FF8C00; transition-duration: 0.3s;}
+
+.btn {transition-duration: 0.5s; background-color:	#FF8C00; border: 0px;} 
+.btn-logout {background-color:	#FF8C00; border: 0px;} 
+.btn:hover {background-color: black;}
 
 .box{ border: 1px solid #d0cdcd; margin: 10px 0; padding:20px; }
+
+.indexp { background-color: #F5F5F5 }
