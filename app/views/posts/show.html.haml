@@ -2,7 +2,10 @@
   %h2
     = @post.title
   = simple_format @post.body
-  Created on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
+  %p
+    %b Tags:
+    = join_tags(@post)
+  #{@post.user.username} posted on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
   %br/
   This post has #{@post.comments.count} comments.
   %br/
@@ -14,4 +17,7 @@
       = f.submit 'Upvote', class: 'upvote-submit'
   = render 'comments/index', comments: @post.comments
   = render 'comments/form', comment: Comment.new , post_id: @post.id
+  
+
+
   = link_to 'Back', posts_path

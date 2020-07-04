@@ -21,4 +21,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_many :replies
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end

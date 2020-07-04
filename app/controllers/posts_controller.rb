@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_values)
 		@post.user_id = current_user.id
+		@post.tags.build
 
 		if @post.save
 			redirect_to @post
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
 
 	def post_values
-		params.require(:post).permit(:title, :body)
+		params.require(:post).permit(:title, :body, tags_attributes: [:name])
 	end
 
 end
