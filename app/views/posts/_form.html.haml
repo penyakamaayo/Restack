@@ -1,13 +1,12 @@
 .container
   .row
     .col-sm-3
-    
+      - @post.tags.build
       = form_for @post do |form|
         #error_explanation
           %h2
             = pluralize(@post.errors.count, "error")
-            prohibited
-            this post from being saved:
+            prohibited this post from being saved:
           %ul
             - @post.errors.full_messages.each do |msg|
               %li= msg
@@ -17,5 +16,9 @@
         .form-group
           = label_tag :body
           = form.text_area :body, class: "form-control"
+        .form-group
+        = render :partial => 'tags/form', |
+          :locals => {:form => form} |
+        %br
         = form.submit "Submit", class: "btn btn-primary float-right"
         = link_to "Back to Posts", posts_path(), class: "mr-2 btn btn-primary float-right"

@@ -13,13 +13,18 @@
 #  updated_at     :datetime         not null
 #
 class Post < ApplicationRecord
+    validates_presence_of :title, :body, :user_id
+    
     belongs_to :user
     has_many :comments
     has_many :upvotes, dependent: :destroy
+    has_many :tags
 
     def score
         upvotes.count
     end
 
-    validates_presence_of :title, :body, :user_id
+    accepts_nested_attributes_for :tags, :allow_destroy => :true,
+        :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank?} }
+
 end
