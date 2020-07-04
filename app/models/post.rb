@@ -16,9 +16,9 @@ class Post < ApplicationRecord
     validates_presence_of :title, :body, :user_id
     
     belongs_to :user
-    has_many :comments
+    has_many :comments, dependent: :destroy
     has_many :upvotes, dependent: :destroy
-    has_many :tags
+    has_many :tags, dependent: :destroy
 
     def score
         upvotes.count

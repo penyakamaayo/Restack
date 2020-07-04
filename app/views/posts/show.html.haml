@@ -5,7 +5,7 @@
   %p
     %b Tags:
     = join_tags(@post)
-  Created on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
+  #{@post.user.username} posted on #{@post.created_at.strftime("%B %d %Y, %l:%M%P")}
   %br/
   This post has #{@post.comments.count} comments.
   %br/
