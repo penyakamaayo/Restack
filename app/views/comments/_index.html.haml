@@ -10,8 +10,7 @@
           %comment_body 
             = comment.body
           %reply_link
-            = link_to 'Reply', comment
-            <i class="fa fa-reply" aria-hidden="true"></i>
+            = link_to raw('<i class="fa fa-reply" aria-hidden="true"></i> Reply'), comment
           %br
           %commented_by
             = User.find(comment.user_id).username
