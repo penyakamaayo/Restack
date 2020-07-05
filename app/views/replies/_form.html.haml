@@ -1,16 +1,15 @@
-= form_with(model: reply, local: true) do |form|
-  - if reply.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(reply.errors.count, "error")
-        prohibited this reply from being saved:
-      %ul
-        - reply.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = form.label :body
-    = form.text_area :body
+.container
+  .row
+    .col-md.12
+      = form_with(model: reply, local: true) do |form|
+        .field
+          %br
+          = form.text_area :body
 
-  = form.hidden_field :comment_id, value: comment_id
-  .actions
-    = form.submit
+        = form.hidden_field :comment_id, value: comment_id
+        %p
+        .actions
+          %comment_submit
+            = form.submit 'Reply to comment', class: "btn btn-primary"
+          %p
+          = link_to 'Back', post_path(@comment.post_id)
