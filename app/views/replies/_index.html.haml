@@ -1,14 +1,15 @@
-%p#notice= notice
-%h4 Replies
-%table
-  %thead
-    %tr
-      %th Reply
-      %th Author
-      %th{:colspan => "3"}
-  %tbody
+.comments_section
+  .container
+    .row
+      .col-md-12
+        %p#notice
+          = notice
     - replies.each do |reply|
-      %tr
-        %td= reply.body
-        %td= User.find(reply.user_id).email
-%br/
+      .row.comments_tab
+        .col-md-12.border-top
+          %comment_body
+            = reply.body
+          %br
+          %commented_by
+            = User.find(reply.user_id).username
+            replied

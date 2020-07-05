@@ -1,21 +1,21 @@
 .container
   .row
-    .col-sm-3
+    .col-md-3
+    .col-md-6
+      %br
+      %ask
+        Ask a Question
+      %br
       - @post.tags.build
       = form_for @post do |form|
-        #error_explanation
-          %h2
-            = pluralize(@post.errors.count, "error")
-            prohibited this post from being saved:
-          %ul
-            - @post.errors.full_messages.each do |msg|
-              %li= msg
         .form-group
+        %post_title_text
           = label_tag :title
-          = form.text_field :title, class: "form-control"
+        = form.text_field :title, class: "form-control"
         .form-group
+        %post_body_text
           = label_tag :body
-          = form.text_area :body, class: "form-control"
+        = form.text_area :body, class: "form-control"
         .form-group
         = render :partial => 'tags/form', |
           :locals => {:form => form} |

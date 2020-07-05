@@ -2,14 +2,7 @@
   .row
     .col-md.12
       = form_with(model: comment, local: true) do |form|
-        - if comment.errors.any?
-          #error_explanation
-            %h2
-              = pluralize(comment.errors.count, "error")
-              prohibited this comment from being saved:
-            %ul
-              - comment.errors.full_messages.each do |message|
-                %li= message
+        %p
         .field
           = form.text_area :body
         - if false
@@ -20,6 +13,7 @@
             = form.label :post_id
             = form.text_field :post_id
         = form.hidden_field :post_id, value: post_id
+        %p
         .actions
           %comment_submit
-            = form.submit 'Add a Comment'
+            = form.submit 'Add a Comment', class: "btn btn-primary"
