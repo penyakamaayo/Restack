@@ -8,7 +8,8 @@
         - reply.errors.full_messages.each do |message|
           %li= message
   .field
-    = form.label :body
+    = form.label :body 
+    %br
     = form.text_area :body
 
   = form.hidden_field :comment_id, value: comment_id

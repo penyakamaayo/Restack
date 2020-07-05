@@ -9,6 +9,8 @@ gem 'rails'#, '~> 5.2.4', '>= 5.2.4.3'
 # gem 'sqlite3'
 gem 'pg'
 
+gem 'font-awesome-sass'
+
 gem 'jquery-rails'
 
 gem "haml-rails", "~> 2.0"
