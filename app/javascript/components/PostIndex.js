@@ -1,0 +1,27 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+var PostIndex = React.createClass({
+  render: function() {
+    return (
+      <div>
+        .indexp
+        .container
+        .row
+        .col-md-12
+        .row
+        .col-md-12
+        %post_count 
+        = @posts.count 
+        questions have been asked.  
+        = link_to "Ask a Question", new_post_path(@post), class: "btn btn-primary ml-2 mt-1"
+        - @posts.each do |post|
+        .row
+        .col-md-6.box
+        %h4= link_to post.title, post_path(post)
+        %posted_by Posted by 
+        = post.user.username
+      </div>
+    );
+  }
+});

@@ -1,0 +1,45 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+var Register = React.createClass({
+  render: function() {
+    return (
+      <div>
+        .container
+        .row
+        .col-md-3
+        .col-md-6.text-center.box
+        %sign_up
+        Sign up to 
+        = link_to 'StackUnderFlow', root_path
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        %br/
+        .field
+        %username_signup
+        = f.label :username
+        %br/
+        = f.text_field :username, autofocus: true, autocomplete: "username"
+        .field
+        %br
+        %pwd_signup
+        = f.label :password
+        - if @minimum_password_length
+        %em
+        (#{'{'}@minimum_password_length{'}'} characters Min)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+        .field
+        %br
+        %pwdconf_signup
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+        .actions
+        %br
+        = f.submit "Sign up", class: "btn btn-primary"
+        = render "devise/shared/links"
+      </div>
+    );
+  }
+});

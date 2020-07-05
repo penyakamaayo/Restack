@@ -1,0 +1,30 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+var CommentsForm = React.createClass({
+  render: function() {
+    return (
+      <div>
+        .container
+        .row
+        .col-md.12
+        = form_with(model: comment, local: true) do |form|
+        %p
+        .field
+        = form.text_area :body
+        - if false
+        .field
+        = form.label :user_id
+        = form.text_field :user_id
+        .field
+        = form.label :post_id
+        = form.text_field :post_id
+        = form.hidden_field :post_id, value: post_id
+        %p
+        .actions
+        %comment_submit
+        = form.submit 'Add a Comment', class: "btn btn-primary"
+      </div>
+    );
+  }
+});
