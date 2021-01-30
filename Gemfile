@@ -9,6 +9,10 @@ gem 'rails'#, '~> 5.2.4', '>= 5.2.4.3'
 # gem 'sqlite3'
 gem 'pg'
 
+gem 'webpacker'
+
+gem 'react-rails'
+
 gem 'font-awesome-sass'
 
 gem 'jquery-rails'
